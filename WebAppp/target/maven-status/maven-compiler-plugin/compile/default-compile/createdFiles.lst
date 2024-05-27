@@ -1,0 +1,7 @@
+fr\insalyon\dasi\test\webappp\models\TestUtilisateur.class
+fr\insalyon\dasi\test\webappp\controllers\AuthentifierUtilisateurAction.class
+fr\insalyon\dasi\test\webappp\vue\ProfilUtilisateurSerialisation.class
+fr\insalyon\dasi\test\webappp\models\HttpServletRequest.class
+fr\insalyon\dasi\test\webappp\models\Serialisation.class
+fr\insalyon\dasi\test\webappp\controllers\ActionServlet.class
+fr\insalyon\dasi\test\webappp\models\Action.class
