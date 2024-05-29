@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public class ProfilUtilisateurSerialisation extends Serialisation {
-    @Override
     public void serialize(HttpServletRequest request, HttpServletResponse response) throws IOException {
         JsonObject jsonResponse = new JsonObject();
         if (request.getAttribute("utilisateur") != null) {
