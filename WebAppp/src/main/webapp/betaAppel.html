@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appel</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .satisfaction-moyenne {
+            background-color: #ffff99;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .satisfaction-tres-satisfait {
+            background-color: #ccffcc;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .satisfaction-pas-satisfait {
+            background-color: #ffcccc;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        header {
+            background-color: #343a40;
+            padding: 15px;
+        }
+        header a {
+            color: white;
+        }
+        header .active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .call-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .call-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .call-participants {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .call-controls {
+            margin-top: 20px;
+        }
+        .call-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .call-title h2 {
+            margin: 0;
+        }
+        .call-title span {
+            font-style: italic;
+        }
+        .call-participant {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-img.green-border {
+            border: 3px solid green;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <a href="#profile" class="d-flex align-items-center">
+                    <img src="https://caricom.org/wp-content/uploads/Floyd-Morris-Remake-1024x879-1.jpg" alt="Profile" class="rounded-circle mr-2" style="width: 40px; height: 40px;">
+                    <span class="h5 mb-0">Kirill Makarov</span>
+                </a>
+            </div>
+            <nav>
+                <a href="#dashboard" class="btn btn-outline-light mr-2">Tableau de bord</a>
+                <a href="#reservations" class="btn btn-outline-light">Mes réservations</a>
+            </nav>
+        </header>
+
+        <div class="call-container">
+            <div class="call-header">
+                <div class="call-title">
+                    <h2>Avec Nadine HAJJ-HASSAN</h2>
+                    <span>10 minutes 15 secondes</span>
+                </div>
+                <button class="btn btn-outline-dark">Quitter</button>
+            </div>
+            <div class="call-participants mt-4">
+                <div class="call-participant">
+                    <img src="https://caricom.org/wp-content/uploads/Floyd-Morris-Remake-1024x879-1.jpg" alt="Nadine HAJJ-HASSAN" class="profile-img green-border">
+                    <p>Nadine HAJJ-HASSAN</p>
+                </div>
+                <div class="call-participant">
+                    <img src="https://caricom.org/wp-content/uploads/Floyd-Morris-Remake-1024x879-1.jpg" alt="Kilian HOUPERT" class="profile-img">
+                    <p>Kilian HOUPERT</p>
+                </div>
+            </div>
+            <div class="call-controls">
+                <button class="btn btn-danger">Terminer</button>
+                <button class="btn btn-secondary">Couper le microphone</button>
+            </div>
+            
+        </div>
+        <div class="call-description mt-4">
+            <h4>Description</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
