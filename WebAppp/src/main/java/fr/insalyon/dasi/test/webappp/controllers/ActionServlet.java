@@ -1,16 +1,15 @@
-package fr.insalyon.dasi.test.webappp.controllers;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package fr.insalyon.dasi.test.webappp.models;
 
-import fr.insalyon.dasi.test.webappp.vue.ProfilUtilisateurSerialisation;
+import business.model.Presenter;
+import business.model.Student;
+import fr.insalyon.dasi.test.webappp.controllers.AuthentifierUtilisateurAction;
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,41 +17,31 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author qsaillard
  */
-@WebServlet(urlPatterns = {"/ActionServlet"})
-public class ActionServlet extends HttpServlet {
-
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+public abstract class Action {
+    public abstract Object execute(HttpServletRequest request, String login, String password);
+    
+    public void authentification(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("application/json;charset=UTF-8");
-
-        String todo = request.getParameter("todo");
-        if ("connecter".equals(todo)) {
-            System.out.println("[TEST] Appel de l’ActionServlet");
-
-            AuthentifierUtilisateurAction action = new AuthentifierUtilisateurAction();
-            action.execute(request);
-
-            ProfilUtilisateurSerialisation serialization = new ProfilUtilisateurSerialisation();
-            serialization.serialize(request, response);
+        
+        AuthentifierUtilisateurAction authService = new AuthentifierUtilisateurAction();
+        
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
+        
+        Object user = authService.execute(request, login, password);
+        if (user != null) {
+            if (user instanceof Student) {
+                // Logique spécifique pour les employés
+                request.setAttribute("user", (Student) user);
+            } else if (user instanceof Presenter) {
+                // Logique spécifique pour les intervenants
+                request.setAttribute("user", (Presenter) user);
+            }
         } else {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid 'todo' parameter.");
+            // Gérer l'authentification échouée
+            request.setAttribute("error", "Invalid login or password");
         }
     }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    public String getServletInfo() {
-        return "Main servlet controller";
-    }
+    
+    
 }
