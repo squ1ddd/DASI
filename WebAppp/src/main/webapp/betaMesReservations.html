@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique des séances</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .satisfaction-moyenne {
+            background-color: #ffff99;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .satisfaction-tres-satisfait {
+            background-color: #ccffcc;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .satisfaction-pas-satisfait {
+            background-color: #ffcccc;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        header {
+            background-color: #343a40;
+            padding: 15px;
+        }
+        header a {
+            color: white;
+        }
+        header .active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <a href="#profile" class="d-flex align-items-center">
+                    <img src="https://caricom.org/wp-content/uploads/Floyd-Morris-Remake-1024x879-1.jpg" alt="Profile" class="rounded-circle mr-2" style="width: 40px; height: 40px;">
+                    <span class="h5 mb-0">Kirill Makarov</span>
+                </a>
+            </div>
+            <nav>
+                <a href="#dashboard" class="btn btn-outline-light mr-2">Tableau de bord</a>
+                <a href="#reservations" class="btn btn-outline-light active">Mes réservations</a>
+            </nav>
+        </header>
+
+        <div class="card">
+            <div class="card-body text-center">
+                <h2 class="card-title">Tu n’as pas de séance planifiée</h2>
+                <button type="button" class="btn btn-primary">Planifier une séance</button>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h3>Historique des séances</h3>
+            <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Avec</th>
+                        <th>Matière</th>
+                        <th>Durée</th>
+                        <th>Satisfaction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nadine HAJJ-HASSAN <span class="badge badge-info ml-1">i</span></td>
+                        <td>Mycologie</td>
+                        <td>10h</td>
+                        <td><span class="satisfaction-moyenne">Moyenne</span></td>
+                    </tr>
+                    <tr>
+                        <td>Nadine HAJJ-HASSAN <span class="badge badge-info ml-1">i</span></td>
+                        <td>Mycologie</td>
+                        <td>10h</td>
+                        <td><span class="satisfaction-tres-satisfait">Très satisfait</span></td>
+                    </tr>
+                    <tr>
+                        <td>Nadine HAJJ-HASSAN <span class="badge badge-info ml-1">i</span></td>
+                        <td>Mycologie</td>
+                        <td>10h</td>
+                        <td><span class="satisfaction-pas-satisfait">Pas satisfait</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

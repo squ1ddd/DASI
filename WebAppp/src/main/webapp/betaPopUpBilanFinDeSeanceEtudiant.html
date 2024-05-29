@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan de fin de séance</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .star-rating {
+            font-size: 2rem;
+            color: #d3d3d3;
+        }
+        .star-rating .bi-star-fill {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bilanSeanceModal">
+            Bilan de fin de séance
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="bilanSeanceModal" tabindex="-1" aria-labelledby="bilanSeanceLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bilanSeanceLabel">Bilan de fin de séance</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p>Notez la séance :</p>
+                        <div class="star-rating">
+                            <i class="bi bi-star" data-value="1"></i>
+                            <i class="bi bi-star" data-value="2"></i>
+                            <i class="bi bi-star" data-value="3"></i>
+                            <i class="bi bi-star" data-value="4"></i>
+                            <i class="bi bi-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary" id="submitRating">Terminer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        $(document).ready(function() {
+            $('.star-rating .bi').on('click', function() {
+                var rating = $(this).data('value');
+                $('.star-rating .bi').removeClass('bi-star-fill').addClass('bi-star');
+                for (var i = 1; i <= rating; i++) {
+                    $('.star-rating .bi[data-value="' + i + '"]').removeClass('bi-star').addClass('bi-star-fill');
+                }
+            });
+
+            $('#submitRating').on('click', function() {
+                var rating = $('.star-rating .bi-star-fill').length;
+                alert('Vous avez noté cette séance ' + rating + ' étoiles.');
+                $('#bilanSeanceModal').modal('hide');
+                // Vous pouvez ajouter une action spécifique pour soumettre la note ici
+            });
+        });
+    </script>
+</body>
+</html>
