@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="profilEtudiantModal" tabindex="-1" aria-labelledby="profilModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="profilModalLabel">Profil Utilisateur</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-3">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle" alt="Photo de profil">
+                    <h4 id="nomUtilisateur">Prénom Nom</h4>
+                </div>
+                <h5>Informations personnelles</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Email:</strong> <span id="emailUtilisateur">user@example.com</span></li>
+                    <li><strong>Niveau Min:</strong> <span id="niveauMinUtilisateur">Niveau 1</span></li>
+                    <li><strong>Niveau Max:</strong> <span id="niveauMaxUtilisateur">Niveau 5</span></li>
+                    <li><strong>Activité:</strong> <span id="activiteUtilisateur">Étudiant</span></li>
+                    <li><strong>Type d'établissement:</strong> <span id="typeEtablissement">Université</span></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        console.log('ca ,marche')
+    });
+</script>

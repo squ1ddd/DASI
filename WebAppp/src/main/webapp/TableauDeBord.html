@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Historique des séances</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .satisfaction-moyenne {
+                background-color: #ffff99;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            .satisfaction-tres-satisfait {
+                background-color: #ccffcc;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            .satisfaction-pas-satisfait {
+                background-color: #ffcccc;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            header {
+                background-color: #343a40;
+                padding: 15px;
+            }
+            header a {
+                color: white;
+            }
+            header .active {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div id="headerContainer"></div>
+
+            <div class="container mt-5">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Répartition des étudiants sur une carte
+                    </div>
+                    <div class="card-body">
+                        <!-- Intégrer ici une carte interactive affichant la répartition des étudiants -->
+                    </div>
+                </div>
+
+                <!-- Répartition des étudiants par IPS -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Répartition des étudiants par IPS
+                    </div>
+                    <div class="card-body">
+                        <!-- Intégrer ici un graphique ou une table affichant la répartition des étudiants par IPS -->
+                    </div>
+                </div>
+
+                <!-- Statistiques du mois dernier -->
+                <div class="card">
+                    <div class="card-header">
+                        Statistiques du mois dernier
+                    </div>
+                    <div class="card-body">
+                        <p>Nombre d'interventions : <strong>[nombre]</strong></p>
+                        <p>Durée moyenne : <strong>[durée]</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        // Charger le contenu du header à partir du fichier header.html
+        $('#headerContainer').load('header.html', {page: 'dashboard'});
+    });
+</script>
